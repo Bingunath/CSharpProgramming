@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.SharedTransitions</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.SharedTransitions.BackgroundAnimation">
+            <summary>
+            Background Animation Type
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.None">
+            <summary>
+            Do not animate.
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.Fade">
+            <summary>
+            Show a fade animation.
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.Flip">
+            <summary>
+            Show a flip animation.
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.SlideFromLeft">
+            <summary>
+            Show a slide from left animation.
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.SlideFromRight">
+            <summary>
+            Show a slide from right animation.
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.SlideFromTop">
+            <summary>
+            Show a slide from top animation.
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.BackgroundAnimation.SlideFromBottom">
+            <summary>
+            Show a slide from bottom animation.
+            </summary>
+        </member>
+        <member name="T:Plugin.SharedTransitions.ISharedTransitionContainer">
+            <summary>
+            Container Page with support for shared transitions
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.ISharedTransitionContainer.TransitionMap">
+            <summary>
+            Gets the transition map
+            </summary>
+            <value>
+            The transition map
+            </value>
+        </member>
+        <member name="P:Plugin.SharedTransitions.ISharedTransitionContainer.CurrentTransition">
+            <summary>
+            The current transition behing execute
+            </summary>
+        </member>
+        <member name="E:Plugin.SharedTransitions.ISharedTransitionContainer.TransitionStarted">
+            <summary>
+            Fired when the Shared Transition starts
+            </summary>
+        </member>
+        <member name="E:Plugin.SharedTransitions.ISharedTransitionContainer.TransitionEnded">
+            <summary>
+            Fired when the Shared Transition ends
+            </summary>
+        </member>
+        <member name="E:Plugin.SharedTransitions.ISharedTransitionContainer.TransitionCancelled">
+            <summary>
+            Fired when the Shared Transition is cancelled
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.PageExtensions.GetCurrentPage(Xamarin.Forms.Page)">
+            <summary>
+            Find the current page based on the MainPage type
+            </summary>
+            <param name="mainPage">Application current mainpage</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.PageExtensions.GetCurrentShellPage(Xamarin.Forms.Shell)">
+            <summary>
+            Find the current page from the main shell
+            </summary>
+        </member>
+        <member name="T:Plugin.SharedTransitions.SharedTransitionNavigationPage">
+            <summary>
+            Navigation Page with support for shared transitions
+            </summary>
+            <seealso cref="T:Xamarin.Forms.NavigationPage" />
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionNavigationPage.TransitionMapPropertyKey">
+            <summary>
+            Map for all transitions (and support properties) associated with this SharedTransitionNavigationPage
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionNavigationPage.TransitionSelectedGroupProperty">
+            <summary>
+            The shared transition selected group for dynamic transitions
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionNavigationPage.BackgroundAnimationProperty">
+            <summary>
+            The background animation associated with the current page in stack
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionNavigationPage.TransitionDurationProperty">
+            <summary>
+            The shared transition duration (in ms) associated with the current page in stack
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.SharedTransitionNavigationPage.TransitionMap">
+            <summary>
+            Gets the transition map
+            </summary>
+            <value>
+            The transition map
+            </value>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionNavigationPage.GetTransitionSelectedGroup(Xamarin.Forms.Page)">
+            <summary>
+            Gets the transition selected group
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionNavigationPage.GetBackgroundAnimation(Xamarin.Forms.Page)">
+            <summary>
+            Gets the background animation.
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionNavigationPage.GetTransitionDuration(Xamarin.Forms.Page)">
+            <summary>
+            Gets the duration of the shared transition
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionNavigationPage.SetTransitionSelectedGroup(Xamarin.Forms.Page,System.String)">
+            <summary>
+            Sets the transition selected group
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionNavigationPage.SetBackgroundAnimation(Xamarin.Forms.Page,Plugin.SharedTransitions.BackgroundAnimation)">
+            <summary>
+            Sets the background animation
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionNavigationPage.SetTransitionDuration(Xamarin.Forms.Page,System.Int64)">
+            <summary>
+            Sets the duration of the shared transition
+            </summary>
+        </member>
+        <member name="T:Plugin.SharedTransitions.SharedTransitionShell">
+            <summary>
+            Shell with support for shared transitions
+            </summary>
+            <seealso cref="T:Xamarin.Forms.Shell" />
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionShell.TransitionMapPropertyKey">
+            <summary>
+            Map for all transitions (and support properties) associated with this SharedTransitionShell
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionShell.TransitionSelectedGroupProperty">
+            <summary>
+            The shared transition selected group for dynamic transitions
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionShell.BackgroundAnimationProperty">
+            <summary>
+            The background animation associated with the current page in stack
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.SharedTransitionShell.TransitionDurationProperty">
+            <summary>
+            The shared transition duration (in ms) associated with the current page in stack
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.SharedTransitionShell.Plugin#SharedTransitions#ISharedTransitionContainer#TransitionMap">
+            <summary>
+            Gets the transition map
+            </summary>
+            <value>
+            The transition map
+            </value>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionShell.GetTransitionSelectedGroup(Xamarin.Forms.Page)">
+            <summary>
+            Gets the transition selected group
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionShell.GetBackgroundAnimation(Xamarin.Forms.Page)">
+            <summary>
+            Gets the background animation.
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionShell.GetTransitionDuration(Xamarin.Forms.Page)">
+            <summary>
+            Gets the duration of the shared transition
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionShell.SetTransitionSelectedGroup(Xamarin.Forms.Page,System.String)">
+            <summary>
+            Sets the transition selected group
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionShell.SetBackgroundAnimation(Xamarin.Forms.Page,Plugin.SharedTransitions.BackgroundAnimation)">
+            <summary>
+            Sets the background animation
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.SharedTransitionShell.SetTransitionDuration(Xamarin.Forms.Page,System.Int64)">
+            <summary>
+            Sets the duration of the shared transition
+            </summary>
+        </member>
+        <member name="T:Plugin.SharedTransitions.ITransitionMapper">
+            <summary>
+            Interface for TransitionMapper 
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.ITransitionMapper.TransitionStack">
+            <summary>
+            Transition stack containing all the registered shared transitions
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.ITransitionMapper.GetMap(Xamarin.Forms.Page,System.String,System.Boolean)">
+            <summary>
+            Get the transition stack associated to a page
+            </summary>
+            <param name="page">Page to check</param>
+            <param name="selectedGroup">Group to filter, if set to null will search for Group=null, dont use this to ignore group filter</param>
+            /// <param name="ignoreGroup">True to completely ignore the filter group</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.ITransitionMapper.AddOrUpdate(Xamarin.Forms.Page,System.String,System.String,System.Boolean,Xamarin.Forms.View,System.Object)">
+            <summary>
+            Add transition information for the specified Page to the TransitionStack
+            </summary>
+            <param name="page">The page.</param>
+            <param name="transitionName">The name of the shared transition.</param>
+            <param name="transitionGroup">The transition group for dynamic transitions.</param>
+            <param name="isLightSnapshot">if true, rasterize the snapshot in iOS</param>
+            <param name="view">The Xamarin Forms view associated to this transition.</param>
+            <param name="nativeView">The Native View</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.ITransitionMapper.ClearMapStackForElementRecycling(Plugin.SharedTransitions.TransitionMap,Plugin.SharedTransitions.TransitionDetail)">
+            <summary>
+            Clear the MapStack from old reference for recycled elements
+            </summary>
+            <param name="transitionMap">The transition map to clear</param>
+            <param name="transitionDetail">The new transitiondetail to check for old, recycled, elements</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.ITransitionMapper.Remove(Xamarin.Forms.Page,Xamarin.Forms.View)">
+            <summary>
+            Removes the specified transitionDetail from the TransitionStack
+            </summary>
+            <param name="view">The Xamarin Forms view associated to remove from transition.</param>
+            <param name="page">The page.</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.ITransitionMapper.RemoveFromPage(Xamarin.Forms.Page)">
+            <summary>
+            Removes the specified page from the TransitionStack
+            </summary>
+            <param name="page">The page.</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.ITransitionMapper.CreateTransition(System.String,System.String,System.Boolean,Xamarin.Forms.View,System.Object)">
+            <summary>
+            Creates a transition with additional information
+            </summary>
+            <param name="transitionName">The name of the shared transition.</param>
+            <param name="transitionGroup">The transition group for dynamic transitions.</param>
+            <param name="isLightSnapshot">if true, rasterize the snapshot in iOS</param>
+            <param name="view">The Xamarin Forms view associated to this transition.</param>
+            <param name="nativeView">The Native View</param>
+        </member>
+        <member name="T:Plugin.SharedTransitions.TransitionMap">
+            <summary>
+            TransitionMap used to associate pages with their transitions 
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionMap.Page">
+            <summary>
+            Page with the associated transitions
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionMap.Transitions">
+            <summary>
+            List of associated transitions to the Page
+            </summary>
+        </member>
+        <member name="T:Plugin.SharedTransitions.TransitionDetail">
+            <summary>
+            Transition detail
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionDetail.TransitionName">
+            <summary>
+            Transition name. The combination of Name and Group must be unique per page
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionDetail.TransitionGroup">
+            <summary>
+            Transition Group for dynamic transitions
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionDetail.View">
+            <summary>
+            Xamarin Forms View associated to the transition
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionDetail.NativeView">
+            <summary>
+            Native View associated to the transition
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionDetail.IsDirty">
+            <summary>
+            Dirty flag, if true this transition will be cleaned at the next mapping check for the page
+            </summary>
+        </member>
+        <member name="P:Plugin.SharedTransitions.TransitionDetail.IsLightSnapshot">
+            <summary>
+            Light snapshot, if true the snapshot view will be rasterized in iOS
+            </summary>
+        </member>
+        <member name="T:Plugin.SharedTransitions.TransitionEffect">
+            <summary>
+            Transition effect used to specify tags to views
+            </summary>
+            <seealso cref="T:Xamarin.Forms.RoutingEffect" />
+        </member>
+        <member name="T:Plugin.SharedTransitions.Transition">
+            <summary>
+            Add specific information to View to activate the Shared Transitions
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.Transition.NameProperty">
+            <summary>
+            Transition name used to associate views between pages
+            </summary>
+        </member>
+        <member name="F:Plugin.SharedTransitions.Transition.GroupProperty">
+            <summary>
+            Transition group for dynamic transitions
+            </summary>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.GetName(Xamarin.Forms.BindableObject)">
+            <summary>
+            Gets the shared transition name for the element
+            </summary>
+            <param name="bindable">Xamarin Forms Element</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.GetGroup(Xamarin.Forms.BindableObject)">
+            <summary>
+            Gets the shared transition group for the element
+            </summary>
+            <param name="bindable">Xamarin Forms Element</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.GetLightSnapshot(Xamarin.Forms.BindableObject)">
+            <summary>
+            Performs a "Light" snapshot on iOS, rasterizing a copy of the current view to use during the transition.
+            This method is faster but doesnt play well with transformations (size, borders, ecc...).
+            Use it only when animating the element position!
+            Does nothing on Anddroid
+            </summary>
+            <param name="bindable">Xamarin Forms Element</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.SetName(Xamarin.Forms.BindableObject,System.String)">
+            <summary>
+            Sets the shared transition name for the element
+            </summary>
+            <param name="bindable">Xamarin Forms Element</param>
+            <param name="value">The shared transition name</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.SetGroup(Xamarin.Forms.BindableObject,System.String)">
+            <summary>
+            Sets the shared transition group for the element
+            </summary>
+            <param name="bindable">Xamarin Forms Element</param>
+            <param name="value">The shared transition group</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.SetLightSnapshot(Xamarin.Forms.BindableObject,System.Boolean)">
+            <summary>
+            Performs a "Light" snapshot on iOS, rasterizing a copy of the current view to use during the transition.
+            This method is faster but doesnt play well with transformations (size, borders, ecc...).
+            Use it only when animating the element position!
+            Does nothing on Anddroid
+            </summary>
+            <param name="bindable">Xamarin Forms Element</param>
+            <param name="value">The shared transition name</param>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.RegisterTransition(Xamarin.Forms.View,System.Object,Xamarin.Forms.Page)">
+            <summary>
+            Registers the transition element in the TransitionStack
+            </summary>
+            <param name="view">Xamarin Forms View</param>
+            <param name="nativeView">The platform native View</param>
+            <param name="currentPage">The current page where the transition has been added</param>
+            <returns>The unique Id of the native View</returns>
+        </member>
+        <member name="M:Plugin.SharedTransitions.Transition.RemoveTransition(Xamarin.Forms.View,Xamarin.Forms.Page)">
+            <summary>
+            Remove the transition configuration from the Stack
+            </summary>
+            <param name="view">View associated to the transition</param>
+            <param name="currentPage">Container Page</param>
+        </member>
+        <member name="T:Plugin.SharedTransitions.TransitionMapper">
+            <summary>
+            TransitionMapper implementation
+            </summary>
+            <seealso cref="T:Plugin.SharedTransitions.ITransitionMapper" />
+        </member>
+        <member name="T:Plugin.SharedTransitions.Shared.Utils.ObservableProperty`1">
+            <summary>
+            Get an event when a property changes
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+    </members>
+</doc>

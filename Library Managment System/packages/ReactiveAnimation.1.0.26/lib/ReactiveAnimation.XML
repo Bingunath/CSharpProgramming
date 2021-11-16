@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReactiveAnimation</name>
+    </assembly>
+    <members>
+        <member name="M:ReactiveAnimation.Animation.CreateObservable(System.IObservable{System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}}},System.IObservable{System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Single}}})">
+            <summary>
+            create an observable for animating multiple related values at once
+            </summary>
+            <param name="fromValues">the observable values to animate from</param>
+            <param name="toValues">the observable values to animate to</param>
+            <returns>observable animation progress for subscription and updating the target object</returns>
+        </member>
+        <member name="M:ReactiveAnimation.Animation.CreateObservable(System.IObservable{System.Single},System.IObservable{System.Single},System.String)">
+            <summary>
+            create an observable for animating a single value
+            </summary>
+            <param name="fromValue">the observable value to animate from</param>
+            <param name="toValue">the observable value to animate to</param>
+            <param name="valueName">the name you want to assign the value</param>
+            <returns>observable animation progress for subscription and updating the target object</returns>
+        </member>
+        <member name="M:ReactiveAnimation.Animation.AnimateControlPosition(System.Windows.Forms.Control,System.IObservable{System.Drawing.Rectangle},System.IObservable{System.Drawing.Rectangle},System.Action)">
+            <summary>
+            animate a Windows Forms Control, automatically subscribing and observing on the control's thread
+            </summary>
+            <param name="ctrl">the Windows Forms Control to animate</param>
+            <param name="fromPosition">the starting position</param>
+            <param name="toPosition">the ending position</param>
+            <param name="onCompletion">an action to run on completion of the animation</param>
+        </member>
+        <member name="M:ReactiveAnimation.ObservableHelper.PositionBasedOnControl``1(System.Windows.Forms.Control,System.Func{System.Windows.Forms.Control,``0})">
+            <summary>
+            Get an observable that will update using the provided function when the specified <paramref name="ctrlDestination"/> control's position changes.
+            </summary>
+            <param name="ctrlDestination">The control to observe.</param>
+            <returns>An observable with the position relative to <paramref name="ctrlDestination"/>.</returns>
+        </member>
+        <member name="M:ReactiveAnimation.ObservableHelper.PositionBasedOnParent``1(System.Windows.Forms.Control,System.Func{System.Windows.Forms.Control,``0})">
+            <summary>
+            Get an observable that will update using the provided function when the specified <paramref name="ctrl"/> control's parent's size changes.
+            </summary>
+            <param name="ctrl">The control whose parent to observe for size changes.</param>
+            <returns>An observable with the position relative to the size of <paramref name="ctrl"/>'s parent.</returns>
+        </member>
+        <member name="M:ReactiveAnimation.ObservableHelper.FixedValue``1(``0)">
+            <summary>
+            Convert a value to an observable that will never change.
+            </summary>
+            <param name="constantValue">The fixed value.</param>
+            <returns>An observable with the constant value specified.</returns>
+        </member>
+        <member name="M:ReactiveAnimation.ObservableHelper.FixedPositionRelativeToParent(System.Windows.Forms.Control)">
+            <summary>
+            Get an observable Point that will contain a control's position relative to it's parent.
+            </summary>
+            <param name="ctrl">The control.</param>
+            <returns>An observable with the position relative to the control's parent.</returns>
+        </member>
+        <member name="M:ReactiveAnimation.ObservableHelper.ObserveWithPrevious``2(System.IObservable{``0},System.Func{``0,``0,``1})">
+            <summary>
+            Get an observable coupled with it's previous value.
+            </summary>
+            <param name="source">The source observable.</param>
+            <param name="projection">The projection to apply to get the output.</param>
+            <returns>An observable coupled with it's previous value.</returns>
+        </member>
+    </members>
+</doc>
